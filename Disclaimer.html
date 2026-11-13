@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>For Bittu 💗</title>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg1:#ffe3ee;--bg2:#ffd0e2;--ink:#6b2142;--card:#fff8fb;--pink:#ff5c93;--line:#ffb8d1;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg1:#2a1020;--bg2:#3a1430;--ink:#ffe3ee;--card:#4a1c3a;--pink:#ff6fa3;--line:#7a3358}}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;min-height:100%}
+body{font-family:'Quicksand',system-ui,sans-serif;color:var(--ink);background:linear-gradient(160deg,var(--bg1),var(--bg2));background-attachment:fixed;text-align:center;overflow-x:hidden}
+h1,h2{font-family:'Pacifico','Brush Script MT',cursive;font-weight:400;margin:.2em 0}
+h1{font-size:clamp(1.9rem,8.5vw,3rem);color:var(--pink)}
+h2{font-size:clamp(1.6rem,7vw,2.2rem)}
+.screen{display:none;min-height:100svh;padding:28px 22px;flex-direction:column;align-items:center;justify-content:center;gap:14px;position:relative;z-index:2}
+.screen.on{display:flex;animation:in .7s ease}
+@keyframes in{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:none}}
+p{max-width:34ch;line-height:1.6;margin:.3em 0;font-size:1.05rem}
+.btn{font:700 1.05rem 'Quicksand',sans-serif;background:var(--pink);color:#fff;border:0;border-radius:999px;padding:14px 30px;cursor:pointer;box-shadow:0 8px 0 rgba(168,40,90,.35);transition:transform .1s,box-shadow .1s}
+.btn:active{transform:translateY(5px);box-shadow:0 3px 0 rgba(168,40,90,.35)}
+.btn.alt{background:var(--card);color:var(--ink);box-shadow:0 8px 0 var(--line)}
+.btn:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.big{font-size:4rem;animation:beat 1.3s infinite}
+@keyframes beat{0%,100%{transform:scale(1)}15%{transform:scale(1.2)}30%{transform:scale(1)}45%{transform:scale(1.15)}}
+#sky{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.fl{position:absolute;bottom:-40px;animation:up linear forwards;opacity:.7}
+@keyframes up{to{transform:translateY(-110vh) rotate(30deg);opacity:0}}
+#field{position:relative;width:100%;max-width:420px;height:52svh;border:2px dashed var(--line);border-radius:28px;background:color-mix(in srgb,var(--card) 60%,transparent);overflow:hidden}
+.catch{position:absolute;font-size:2.4rem;border:0;background:none;cursor:pointer;padding:6px;animation:bob 2.4s ease-in-out infinite;transition:transform .25s,opacity .25s}
+.catch.pop{transform:scale(2.2);opacity:0}
+@keyframes bob{50%{transform:translateY(-14px)}}
+.bar{width:min(300px,80%);height:14px;border-radius:99px;background:var(--line);overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--pink);transition:width .3s}
+.tl{display:flex;flex-direction:column;gap:12px;width:100%;max-width:340px;text-align:left}
+.tl div{background:var(--card);border-radius:20px;padding:14px 18px;border-left:6px solid var(--pink);box-shadow:0 6px 18px rgba(255,92,147,.15)}
+.tl b{display:block;color:var(--pink)}
+.count{font-size:3.4rem;font-weight:700;color:var(--pink);line-height:1}
+.env{font-size:6rem;cursor:pointer;background:none;border:0;animation:beat 1.6s infinite}
+.letter{background:var(--card);border-radius:24px;padding:26px 22px;max-width:480px;width:100%;text-align:left;box-shadow:0 14px 40px rgba(255,92,147,.25);border:2px solid var(--line)}
+.letter h2{text-align:center;color:var(--pink)}
+.letter p{max-width:none;opacity:0;transform:translateY(8px);transition:opacity .9s,transform .9s}
+.letter p.show{opacity:1;transform:none}
+.sign{font-family:'Pacifico',cursive;color:var(--pink);font-size:1.2rem}
+.row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+#reply{font-weight:700;color:var(--pink);min-height:2.4em}
+#paper{position:relative;width:100%;max-width:360px;height:260px;touch-action:none;user-select:none;-webkit-user-select:none}
+.half{position:absolute;left:0;right:0;height:50%;background:var(--card);border:2px solid var(--line);display:flex;align-items:center;justify-content:center;font-family:'Pacifico',cursive;color:var(--pink);font-size:1.5rem;transition:transform 1s ease-in,opacity 1s}
+.top{top:0;border-radius:18px 18px 0 0;border-bottom:0}
+.bot{bottom:0;border-radius:0 0 18px 18px;border-top:0}
+#paper.split .top{transform:translateY(-130px) rotate(-8deg);opacity:0}
+#paper.split .bot{transform:translateY(130px) rotate(8deg);opacity:0}
+#cutline{position:absolute;left:0;right:0;top:50%;height:0;border-top:3px dashed var(--pink);z-index:3}
+#cutfill{position:absolute;left:0;top:-6px;height:9px;width:0;background:var(--bg2)}
+#sc{position:absolute;top:50%;left:0;font-size:2.4rem;transform:translate(-50%,-50%);z-index:4;cursor:grab;outline:none}
+.tag{font-family:'Pacifico',cursive;color:var(--pink);font-size:1.3rem}
+#yay{position:fixed;inset:0;z-index:20;display:none;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:24px;background:linear-gradient(160deg,var(--bg1),var(--bg2));overflow-y:auto}
+#yay.on{display:flex;animation:in .7s ease}
+.lic{background:var(--card);border:3px dashed var(--pink);border-radius:20px;padding:18px 20px;max-width:340px;width:100%;text-align:left;transform:rotate(-2deg);box-shadow:0 12px 30px rgba(255,92,147,.3)}
+.lic h3{font-family:'Pacifico',cursive;font-weight:400;color:var(--pink);text-align:center;margin:0 0 8px;font-size:1.4rem}
+.lic p{max-width:none;margin:.25em 0;font-size:.98rem}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+</head>
+<body>
+<div id="sky" aria-hidden="true"></div>
+
+<section class="screen on" id="s0">
+<div class="big">💗</div>
+<h1>HI CHARU KESEO</h1>
+<p>Charu, tumhare liye ek chhota sa surprise banaya hai, door se, dil se. 🌸</p>
+<button class="btn" data-next="1">Shuru karein</button>
+</section>
+
+<section class="screen" id="s1">
+<h2>Pehle page kaato ✂️</h2>
+<p>Scissors ko dotted line pe left se right ghumao.</p>
+<div id="paper"><div class="half top">Charu KEseo 💗</div><div class="half bot">Bittu 🌸</div><div id="cutline"><i id="cutfill"></i></div><div id="sc" tabindex="0" role="slider" aria-label="Scissors">✂️</div></div>
+<p class="tag">aise hi kaatna mera 😜</p>
+</section>
+
+<section class="screen" id="s2">
+<h2>Hamari kahani 🌙</h2>
+<div class="tl">
+<div><b>13 October, raat ke 8–9 baje</b>Shayad yahi woh pal tha jab hum mile.</div>
+<div><b>Aaj</b>Poora ek mahina ho gaya, par lagta hai jaise kabse jaante hain.</div>
+</div>
+<div class="count" id="days">0</div>
+<p>din ho gaye hamein mile hue 💞</p>
+<button class="btn" data-next="3">Aage chalo</button>
+</section>
+
+<section class="screen" id="s3">
+<h2>Ek secret hai tumhare liye 🤫</h2>
+<p>Is envelope ko tap karo, Bittu.</p>
+<button class="env" id="env" aria-label="Envelope kholo">💌</button>
+</section>
+
+<section class="screen" id="s4">
+<div class="letter">
+<h2>Hi Bittu 💗</h2>
+<p>Hi Charu KEseo... urf Bittu 😊 13th October ko raat ke 8-9 baje hi shyd hum mile the, and aaj pura 1 month ho gaya hai. Honestly, lagta hai ki pata nhi kitna time ho gya hai, aisa lagta hai jaise kabse jaante hain ek dusre ko.</p>
+<p>Mujhe ek chhota sa confession karna hai... tumhari itni cute si shakal, tumhara woh ‘are madarchod, are betichod’ wala unfiltered andaaz, aur upar se tumhari woh 33 girlfriends sab kuch mila kar I think I like you the most! ❤️</p>
+<p>Mujhe pata hai shayad tumko abhi thoda time chahiye, so please take your time. Bas whenever you’re ready, I’d love to know ki tum kya feel karti ho.......</p>
+<p>apka ugly chiku, and also kaatwaunga to mai aapse hi ab chahe abhi kaatdo ya fir 1 saal, 10 saal, 100 saal ya 1 janam baad 🐿️💗</p>
+<p class="sign">— tumhara ugly chiku</p>
+</div>
+<div class="row" id="ans" style="display:none">
+<button class="btn" id="yes">Mujhe bhi 💗</button>
+<button class="btn alt" id="no">Thoda time chahiye ⏳</button>
+</div>
+<div id="reply" aria-live="polite"></div>
+</section>
+
+<div id="yay"><div class="big">🥹</div><h2>Yayyy Bittu! 💗</h2><p>Dil mein confetti phoot gaya, sach mein.</p><div class="lic"><h3>Kaatne ki License 🐿️</h3><p><b>Issued to:</b> Charu KEseo (Bittu)</p><p><b>Valid:</b> 1 janam tak, har janam renewable</p><p><b>Kaat sakti ho:</b> kabhi bhi, kitna bhi 😌</p><p class="sign">— tumhara ugly chiku</p></div><p>Aaj se tum meri sabse favourite Bittu ho 💗</p><div class="row"><a class="btn" id="wa" style="text-decoration:none" target="_blank" rel="noopener" href="https://wa.me/?text=Maine%20page%20kaat%20diya%20aur%20haan%20bol%20diya%20%F0%9F%92%97">Chiku ko batao 💬</a><button class="btn alt" id="back">Wapas</button></div></div>
+<script>
+var sky=document.getElementById('sky'),E=['💗','🌸','✨','💕','🎀','🌷'];
+function float(n){for(var i=0;i<n;i++){var s=document.createElement('span');s.className='fl';s.textContent=E[Math.floor(Math.random()*E.length)];s.style.left=Math.random()*100+'%';s.style.fontSize=14+Math.random()*22+'px';var d=6+Math.random()*6;s.style.animationDuration=d+'s';sky.appendChild(s);setTimeout(function(x){x.remove()},d*1000,s)}}
+float(10);setInterval(function(){float(2)},1500);
+function go(n){document.querySelectorAll('.screen').forEach(function(s){s.classList.remove('on')});document.getElementById('s'+n).classList.add('on');window.scrollTo(0,0);if(n==1)spawn();if(n==2)days();}
+document.querySelectorAll('[data-next]').forEach(function(b){b.onclick=function(){go(b.dataset.next)}});
+var got=0;
+function spawn(){var f=document.getElementById('field');f.innerHTML='';got=0;upd();
+for(var i=0;i<5;i++){var b=document.createElement('button');b.className='catch';b.textContent=['💗','💖','💕','💘','💝'][i];b.setAttribute('aria-label','heart');
+b.style.left=(8+Math.random()*70)+'%';b.style.top=(6+Math.random()*72)+'%';b.style.animationDelay=(i*.4)+'s';
+b.onclick=function(){if(this.classList.contains('pop'))return;this.classList.add('pop');got++;float(4);upd();if(got==5)setTimeout(function(){go(2)},700)};f.appendChild(b)}}
+function upd(){document.getElementById('fill').style.width=got*20+'%';document.getElementById('cnt').textContent=got+' / 5'}
+function days(){var now=new Date(),start=new Date(now.getFullYear(),9,13);if(start>now)start.setFullYear(start.getFullYear()-1);
+var n=Math.max(0,Math.floor((now-start)/864e5)),el=document.getElementById('days'),c=0;
+var t=setInterval(function(){c+=Math.max(1,Math.ceil(n/25));if(c>=n){c=n;clearInterval(t)}el.textContent=c},40)}
+document.getElementById('env').onclick=function(){this.textContent='💞';float(16);setTimeout(function(){go(4);var ps=document.querySelectorAll('.letter p');ps.forEach(function(p,i){setTimeout(function(){p.classList.add('show')},500+i*1800)});setTimeout(function(){document.getElementById('ans').style.display='flex'},500+ps.length*1800)},600)};
+document.querySelectorAll('[data-a]').forEach(function(b){b.onclick=function(){document.getElementById('reply').textContent=b.dataset.a;float(18)}});
+spawn=function(){var p=document.getElementById('paper'),sc=document.getElementById('sc'),cf=document.getElementById('cutfill'),pos=0,drag=false,done=false;
+function set(x){var w=p.clientWidth;pos=Math.max(pos,Math.min(x,w));sc.style.left=pos+'px';cf.style.width=pos+'px';if(pos>w*.95&&!done){done=true;float(12);if(navigator.vibrate)navigator.vibrate(60);p.classList.add('split');setTimeout(function(){go(2)},1200)}}
+set(0);
+p.onpointerdown=function(e){drag=true;set(e.clientX-p.getBoundingClientRect().left)};
+p.onpointermove=function(e){if(drag)set(e.clientX-p.getBoundingClientRect().left)};
+p.onpointerup=p.onpointercancel=function(){drag=false};
+sc.onkeydown=function(e){if(e.key==='ArrowRight')set(pos+p.clientWidth*.1)}};
+var no=document.getElementById('no'),nm=['Arre pakad ke dikhao 😜','Itni jaldi nahi 🏃‍♀️','Yeh button sharma gaya 🙈','Chiku ke paas aa jao 🐿️','Nahi milega, try again 😝'],ni=0;
+function dodge(e){if(e){e.preventDefault();e.stopPropagation()}no.style.position='fixed';no.style.zIndex=5;no.style.left=(8+Math.random()*(innerWidth-no.offsetWidth-16))+'px';no.style.top=(8+Math.random()*(innerHeight-no.offsetHeight-16))+'px';document.getElementById('reply').textContent=nm[ni++%nm.length]}
+['pointerenter','pointerdown','touchstart','click','focus'].forEach(function(t){no.addEventListener(t,dodge,{passive:false})});
+document.getElementById('yes').onclick=function(){document.getElementById('yay').classList.add('on');float(40);var n=0,iv=setInterval(function(){float(6);if(++n>10)clearInterval(iv)},500)};
+document.getElementById('back').onclick=function(){document.getElementById('yay').classList.remove('on')};
+</script>
+</body>
+</html>
